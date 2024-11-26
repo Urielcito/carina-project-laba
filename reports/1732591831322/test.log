@@ -1,0 +1,25 @@
+[2024-11-26 03:30:31] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.gsmarena.com
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+===============================================
+
+[2024-11-26 03:30:31] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-11-26 03:30:34] [1] [INFO] [TestNG] Running:
+  C:\Users\uribe\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[2024-11-26 03:30:34] [1] [INFO] Set thread-count=1
+[2024-11-26 03:30:34] [1] [INFO] Set data-provider-thread-count=1
+[2024-11-26 03:30:34] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-11-26 03:30:42] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-11-26 03:30:42] [1] [INFO] RESULT #1: TEST [carina-project-laba - testCreateUser] PASS [log=file://D:\Programacion\proyectos_java\LABA\carina-project-laba\.\reports\1732591831322/7d3ac754-a611-49fc-a7b4-ab9ad82746d4/test.log]
+[2024-11-26 03:30:42] [1] [INFO] RESULT #2: TEST [carina-project-laba - testCreateUserMissingSomeFields] PASS [log=file://D:\Programacion\proyectos_java\LABA\carina-project-laba\.\reports\1732591831322/027ccb17-ce4c-484d-b4f9-799e68303c80/test.log]
+[2024-11-26 03:30:42] [1] [INFO] RESULT #3: TEST [carina-project-laba - testDeleteUsers] PASS [log=file://D:\Programacion\proyectos_java\LABA\carina-project-laba\.\reports\1732591831322/6f233140-4cd3-4cda-8845-9c024bfcac9d/test.log]
+[2024-11-26 03:30:42] [1] [INFO] RESULT #4: TEST [carina-project-laba - testGetUsers] PASS [log=file://D:\Programacion\proyectos_java\LABA\carina-project-laba\.\reports\1732591831322/25fb22b5-582d-45f2-b264-008864b9799d/test.log]
