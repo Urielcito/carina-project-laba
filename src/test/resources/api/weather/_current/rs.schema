@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "request": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "query": { "type": "string" },
+        "language": { "type": "string" },
+        "unit": { "type": "string" }
+      },
+      "required": ["type", "query", "language", "unit"]
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "region": { "type": "string" },
+        "lat": { "type": "string", "pattern": "^-?\\d+(\\.\\d+)?$" },
+        "lon": { "type": "string", "pattern": "^-?\\d+(\\.\\d+)?$" },
+        "timezone_id": { "type": "string" },
+        "localtime": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}$"
+        },
+        "localtime_epoch": { "type": "integer" },
+        "utc_offset": { "type": "string", "pattern": "^-?\\d+(\\.\\d+)?$" }
+      },
+      "required": ["name", "country", "lat", "lon"]
+    },
+    "current": {
+      "type": "object",
+      "properties": {
+        "observation_time": { "type": "string" },
+        "temperature": { "type": "integer" },
+        "weather_code": { "type": "integer" },
+        "weather_icons": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "weather_descriptions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "wind_speed": { "type": "integer" },
+        "wind_degree": { "type": "integer" },
+        "wind_dir": { "type": "string" },
+        "pressure": { "type": "integer" },
+        "precip": { "type": "number" },
+        "humidity": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "cloudcover": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "feelslike": { "type": "integer" },
+        "uv_index": { "type": "integer", "minimum": 0 },
+        "visibility": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["temperature", "humidity", "weather_descriptions"]
+    }
+  },
+  "required": ["request", "location", "current"]
+}

@@ -1,0 +1,40 @@
+{
+  "request": {
+    "type": "City",
+    "query": "City, Country",
+    "language": "en",
+    "unit": "m"
+  },
+  "location": {
+    "name": "Generic City",
+    "country": "Generic Country",
+    "region": "Generic Region",
+    "lat": "0.000",
+    "lon": "0.000",
+    "timezone_id": "Generic/Timezone",
+    "localtime": "2024-01-01 00:00",
+    "localtime_epoch": 1234567890,
+    "utc_offset": "0.0"
+  },
+  "current": {
+    "observation_time": "12:00 PM",
+    "temperature": 20,
+    "weather_code": 113,
+    "weather_icons": [
+      "https://example.com/weather-icon.png"
+    ],
+    "weather_descriptions": [
+      "Clear"
+    ],
+    "wind_speed": 10,
+    "wind_degree": 180,
+    "wind_dir": "S",
+    "pressure": 1013,
+    "precip": 0.0,
+    "humidity": 50,
+    "cloudcover": 0,
+    "feelslike": 20,
+    "uv_index": 5,
+    "visibility": 10
+  }
+}
