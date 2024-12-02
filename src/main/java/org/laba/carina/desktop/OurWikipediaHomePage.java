@@ -17,6 +17,9 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     @FindBy(id = "pt-createaccount-2")
     private ExtendedWebElement signUpBtn;
 
+    @FindBy(id ="ca-talk")
+    private ExtendedWebElement discussionsLink;
+
     public OurWikipediaHomePage(WebDriver driver) {
         super(driver);
     }
@@ -26,8 +29,17 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
         return new WikipediaSignUpPage(driver);
     }
 
+    public WikipediaDiscussionPage goToWikipediaDiscussionPage(WebDriver driver){
+        openDiscussionPage();
+        return new WikipediaDiscussionPage(driver);
+    }
+
     public void openSignUp(){
         signUpBtn.clickIfPresent();
+    }
+
+    public void openDiscussionPage(){
+        discussionsLink.clickIfPresent();
     }
 }
 
