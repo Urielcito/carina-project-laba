@@ -1,4 +1,6 @@
 # Changelog
+## 03/12/24 8:25 AM
+* Succesfully ran new tests, some dont work as wanted.
 ## 29/11/24 4:02 AM
 * API Test succesfully runs. API used is Weatherstack.
 * A test that goes through three different pages is done:

@@ -29,19 +29,21 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     @FindBy(id ="vector-page-tools-dropdown-checkbox")
     private ExtendedWebElement toolbar;
 
-    @FindBy(id ="vector-dropdown-content")
-    private List<ExtendedWebElement> toolbarList;
+    @FindBy(id ="t-upload")
+    private ExtendedWebElement uploadFile;
 
-    //method to handle toolbar selection
-    public void selectInputDropdownOption(String optionText) {
+    @FindBy(id ="footer-places-privacy")
+    private ExtendedWebElement policyPage;
+
+    @FindBy(className ="cdx-text-input__input")
+    private ExtendedWebElement searchBar;
+
+   //@FindBy(className ="cdx-button cdx-button--action-default cdx-button--weight-normal")
+    @FindBy(xpath = "//button[@type='submit']")
+    private ExtendedWebElement searchButton;
+
+    public void selectInputDropdown() {
         toolbar.clickIfPresent();
-        for (ExtendedWebElement option : toolbarList) {
-            if (option.getText().equals(optionText)) {
-                option.click();
-                return;
-            }
-        }
-        throw new IllegalArgumentException("Option '" + optionText + "' not found in dropdown.");
     }
 
     public OurWikipediaHomePage(WebDriver driver) {
@@ -51,6 +53,11 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     public WikipediaSignUpPage goToWikipediaSignUpPage(WebDriver driver) {
         openSignUp();
         return new WikipediaSignUpPage(driver);
+    }
+
+    public WikipediaUploadPage goToWikipediaUploadPage(WebDriver driver){
+        openUploadPage();
+        return new WikipediaUploadPage(driver);
     }
 
     public WikipediaDiscussionPage goToWikipediaDiscussionPage(WebDriver driver){
@@ -63,8 +70,23 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
         return new WikipediaSourceCodePage(driver);
     }
 
+    public WikipediaPolicyPage goToWikipediaPolicyPage(WebDriver driver){
+        openPolicyPage();
+        return new WikipediaPolicyPage(driver);
+    }
+
+    public WikipediaResultPage search(String data){
+        searchBar.type(data);
+        searchButton.clickIfPresent();
+        return new WikipediaResultPage(driver);
+    }
+
     public void openSignUp(){
         signUpBtn.clickIfPresent();
+    }
+
+    public void openArgentinaPage(){
+
     }
 
     public void openDiscussionPage(){
@@ -72,6 +94,14 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     }
     public void openSourceCodePage(){
         viewSourceCode.clickIfPresent();
+    }
+
+    public void openUploadPage(){
+        uploadFile.clickIfPresent();
+    }
+
+    public void openPolicyPage(){
+        policyPage.clickIfPresent();
     }
 }
 

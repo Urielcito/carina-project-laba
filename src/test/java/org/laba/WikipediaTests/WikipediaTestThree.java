@@ -8,6 +8,8 @@ import com.zebrunner.carina.core.registrar.tag.TestPriority;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.laba.carina.desktop.OurWikipediaHomePage;
 import org.laba.carina.desktop.WikipediaDiscussionPage;
+import org.laba.carina.desktop.WikipediaSourceCodePage;
+import org.laba.carina.desktop.WikipediaUploadPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -21,6 +23,8 @@ public class WikipediaTestThree implements IAbstractTest {
         OurWikipediaHomePage homePage = new OurWikipediaHomePage(getDriver());
         homePage.open();
         Assert.assertEquals(homePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/wiki/Wikipedia:Portada", "Home page is not opened");
-        homePage.selectInputDropdownOption("Herramientas");
+        homePage.selectInputDropdown();
+        WikipediaUploadPage uploadPage = homePage.goToWikipediaUploadPage(getDriver());
+        Assert.assertEquals(uploadPage.getDriver().getCurrentUrl(), "https://commons.wikimedia.org/wiki/Special:UploadWizard?uselang=es", "Home page is not opened");
     }
 }
