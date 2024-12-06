@@ -24,7 +24,7 @@ public class WikipediaTestThree implements IAbstractTest {
         homePage.open();
         Assert.assertEquals(homePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/wiki/Wikipedia:Portada", "Home page is not opened");
         homePage.selectInputDropdown();
-        WikipediaUploadPage uploadPage = homePage.goToWikipediaUploadPage(getDriver());
+        WikipediaUploadPage uploadPage = homePage.goToWikipediaUploadPage();
         Assert.assertEquals(uploadPage.getDriver().getCurrentUrl(), "https://commons.wikimedia.org/wiki/Special:UploadWizard?uselang=es", "Home page is not opened");
     }
 }

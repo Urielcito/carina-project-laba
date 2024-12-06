@@ -1,4 +1,8 @@
 # Changelog
+## 06/12/24 9:29 AM
+* Removed the HomePageBase pageFactory feature in web automation tests.
+* Removed the unnecesary GetDriver() calls in the "GoTo" methods.
+* Added the reports folder in the .gitignore, let's see if it works.
 ## 06/12/24 2:15 AM
 * Finished first 5 tests, one with data provider which still cant hit the search button.
 ## 03/12/24 8:25 AM

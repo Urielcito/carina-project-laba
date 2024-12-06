@@ -4,18 +4,12 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.laba.carina.common.OurWikipediaHomePageBase;
+import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.zebrunner.carina.utils.factory.DeviceType;
 
-@DeviceType(pageType = DeviceType.Type.DESKTOP, parentClass = OurWikipediaHomePageBase.class)
-public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
+public class OurWikipediaHomePage extends AbstractPage {
 
     @FindBy(id = "pt-createaccount-2")
     private ExtendedWebElement signUpBtn;
@@ -82,23 +76,23 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
         super(driver);
     }
 
-    public WikipediaSignUpPage goToWikipediaSignUpPage(WebDriver driver) {
+    public WikipediaSignUpPage goToWikipediaSignUpPage() {
         openSignUp();
         return new WikipediaSignUpPage(driver);
     }
 
-    public WikipediaUploadPage goToWikipediaUploadPage(WebDriver driver){
+    public WikipediaUploadPage goToWikipediaUploadPage(){
         openUploadPage();
         return new WikipediaUploadPage(driver);
     }
 
-    public WikipediaDiscussionPage goToWikipediaDiscussionPage(WebDriver driver){
+    public WikipediaDiscussionPage goToWikipediaDiscussionPage(){
         openDiscussionPage();
         return new WikipediaDiscussionPage(driver);
     }
 
 
-    public WikipediaPolicyPage goToWikipediaPolicyPage(WebDriver driver){
+    public WikipediaPolicyPage goToWikipediaPolicyPage(){
         openPolicyPage();
         return new WikipediaPolicyPage(driver);
     }

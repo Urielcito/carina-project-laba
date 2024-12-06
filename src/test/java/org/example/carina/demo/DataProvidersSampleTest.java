@@ -61,7 +61,7 @@ public class DataProvidersSampleTest implements IAbstractTest {
      * @param b int
      * @param c int
      */
-    @Test()
+    @Test(dataProvider = "DP1")
     @MethodOwner(owner = "qpsdemo")
     @Parameters({"a", "b", "c"})
     @TestRailCases(testCasesId = "55")
@@ -70,5 +70,4 @@ public class DataProvidersSampleTest implements IAbstractTest {
         int expected = Integer.valueOf(c);
         Assert.assertEquals(actual, expected, "Invalid Subtract result!");
     }
-
 }
