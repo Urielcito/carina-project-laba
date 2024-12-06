@@ -23,10 +23,22 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     @FindBy(id ="ca-talk")
     private ExtendedWebElement discussionsLink;
 
-    @FindBy(id ="ca-viewsource")
-    private ExtendedWebElement viewSourceCode;
+    @FindBy(id ="vector-main-menu-dropdown")
+    private ExtendedWebElement openMainMenu;
 
-    @FindBy(id ="vector-page-tools-dropdown-checkbox")
+    @FindBy(className ="vector-pinnable-header-toggle-button")
+    private ExtendedWebElement moveMenu;
+
+    @FindBy(xpath ="//*[@id=\"skin-client-prefs-vector-feature-custom-font-size\"]/div[2]/ul/li/div/form/div[1]")
+    private ExtendedWebElement smallText;
+
+    @FindBy(xpath ="//*[@id=\"skin-client-prefs-vector-feature-custom-font-size\"]/div[2]/ul/li/div/form/div[2]")
+    private ExtendedWebElement mediumText;
+
+    @FindBy(xpath ="//*[@id=\"skin-client-prefs-vector-feature-custom-font-size\"]/div[2]/ul/li/div/form/div[3]")
+    private ExtendedWebElement bigText;
+
+    @FindBy(className ="vector-page-tools-landmark")
     private ExtendedWebElement toolbar;
 
     @FindBy(id ="t-upload")
@@ -39,11 +51,31 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
     private ExtendedWebElement searchBar;
 
    //@FindBy(className ="cdx-button cdx-button--action-default cdx-button--weight-normal")
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(className = "cdx-button")
     private ExtendedWebElement searchButton;
 
     public void selectInputDropdown() {
         toolbar.clickIfPresent();
+    }
+
+    public void selectMainMenu(){
+        openMainMenu.clickIfPresent();
+    }
+
+    public void moveMenu(){
+        moveMenu.clickIfPresent();
+    }
+
+    public void checkSmallText(){
+        smallText.clickIfPresent();
+    }
+
+    public void checkMediumText(){
+        mediumText.clickIfPresent();
+    }
+
+    public void checkBigText(){
+        bigText.clickIfPresent();
     }
 
     public OurWikipediaHomePage(WebDriver driver) {
@@ -65,10 +97,6 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
         return new WikipediaDiscussionPage(driver);
     }
 
-    public WikipediaSourceCodePage goToWikipediaSourceCodePage(WebDriver driver){
-        openSourceCodePage();
-        return new WikipediaSourceCodePage(driver);
-    }
 
     public WikipediaPolicyPage goToWikipediaPolicyPage(WebDriver driver){
         openPolicyPage();
@@ -91,9 +119,6 @@ public class OurWikipediaHomePage extends OurWikipediaHomePageBase {
 
     public void openDiscussionPage(){
         discussionsLink.clickIfPresent();
-    }
-    public void openSourceCodePage(){
-        viewSourceCode.clickIfPresent();
     }
 
     public void openUploadPage(){

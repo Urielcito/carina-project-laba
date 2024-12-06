@@ -21,8 +21,8 @@ public class WikipediaTestTwo implements IAbstractTest {
         homePage.open();
         Assert.assertEquals(homePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/wiki/Wikipedia:Portada", "Home page is not opened");
 
-        WikipediaSourceCodePage sourceCodePage = homePage.goToWikipediaSourceCodePage(getDriver());
-        Assert.assertEquals(sourceCodePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/w/index.php?title=Wikipedia:Portada&action=edit", "Home page is not opened");
+        homePage.selectMainMenu();
+        homePage.moveMenu();
     }
 
 }

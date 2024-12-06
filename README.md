@@ -1,4 +1,6 @@
 # Changelog
+## 06/12/24 2:15 AM
+* Finished first 5 tests, one with data provider which still cant hit the search button.
 ## 03/12/24 8:25 AM
 * Succesfully ran new tests, some dont work as wanted.
 ## 29/11/24 4:02 AM

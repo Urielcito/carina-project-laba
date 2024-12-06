@@ -21,7 +21,8 @@ public class WikipediaTestFour implements IAbstractTest {
         homePage.open();
         Assert.assertEquals(homePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/wiki/Wikipedia:Portada", "Home page is not opened");
 
-        WikipediaPolicyPage policyPage = homePage.goToWikipediaPolicyPage(getDriver());
-        Assert.assertEquals(policyPage.getDriver().getCurrentUrl(), "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy", "Home page is not opened");
+        homePage.checkSmallText();
+        homePage.checkMediumText();
+        homePage.checkBigText();
     }
 }
