@@ -23,7 +23,6 @@ public class WikipediaSampleTest implements IAbstractTest{
         Assert.assertEquals(homePage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/wiki/Wikipedia:Portada", "Home page is not opened");
 
         WikipediaSignUpPage wikipediaSignUpPage = homePage.goToWikipediaSignUpPage();
-
         Assert.assertEquals(wikipediaSignUpPage.getDriver().getCurrentUrl(), "https://es.wikipedia.org/w/index.php?title=Especial:Crear_una_cuenta&returnto=Wikipedia%3APortada", "Home page is not opened");
 
         WikipediaUsernamesPage wikipediaUsernamesPage = wikipediaSignUpPage.goToWikipediaUsernamesPage();

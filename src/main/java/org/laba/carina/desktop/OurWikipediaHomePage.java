@@ -5,7 +5,10 @@ import java.util.List;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 
@@ -44,8 +47,7 @@ public class OurWikipediaHomePage extends AbstractPage {
     @FindBy(className ="cdx-text-input__input")
     private ExtendedWebElement searchBar;
 
-   //@FindBy(className ="cdx-button cdx-button--action-default cdx-button--weight-normal")
-    @FindBy(className = "cdx-button")
+    @FindBy(css = "button.cdx-button")
     private ExtendedWebElement searchButton;
 
     public void selectInputDropdown() {
@@ -102,6 +104,14 @@ public class OurWikipediaHomePage extends AbstractPage {
         searchButton.clickIfPresent();
         return new WikipediaResultPage(driver);
     }
+
+   public WikipediaSandboxPage goToWikipediaSandboxPage(){
+        searchBar.type("Wikipedia:Sandbox");
+        searchButton.clickIfPresent();
+        return new WikipediaSandboxPage(driver);
+    }
+
+
 
     public void openSignUp(){
         signUpBtn.clickIfPresent();
