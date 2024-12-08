@@ -1,4 +1,4 @@
-package org.laba.carina.desktop;
+package org.laba.carina.gui.desktop;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -29,5 +29,9 @@ public class WikipediaActiveSandboxPage extends AbstractPage {
 
     public Boolean editedTextEquals(String text){
         return editedText.getText().equals(text);
+    }
+
+    public Boolean editedTextIsBold(String text){
+        return editedText.getAttribute("innerHTML").contains("<b>" + text + "</b>");
     }
 }

@@ -1,24 +1,24 @@
 # TO-DO:
+- 10 Android Native tests.
 
-- Test 8º: 
+# Changelog
+## 08/12/2024 1:16 AM
+* Added the needed dataprovider for my tenth test.
+* Added the eighth test:
 	- Purpose: Changes are reflected in the preview of the page
 	- Same steps as above, this time, when we click on the available sandbox:
 	- Edit the text with anything, then click on preview changes and assert that the changes we made are reflected in the preview.
-- Test 9º: 
+* Added the nineth test:
 	- Purpose: BOLD text is in fact bold when previewed and applied.
 	- Same steps as above, this time, when we click on the available sandbox:
 	- Edit the page, adding some BOLD text.
 	- First, preview changes and assert that the added text is in fact bold.
 	- Lastly, apply the changes and assert again that the added text remained bold.
-- Test 10º: The data provider one; 
+* Added the tenth test:
 	- Purpose: Check that captcha is working as intended.
 	- Enter to the log in page
-	- Make a counter variable starting in zero.
-	- Make a WHILE loop that iterates n times, being n the amount of data we have in our log in data set, OR until a certain web element appears.
-	- In each iteration of the for loop we will input the data, click on log in and one up the counter variable.
-	- If the captcha appears (whether we managed to input the entire dataset or not) we will assert that the counter variable is less than n (the quantity of unique data in our data set) AND that the captcha appeared.
-
-# Changelog
+	- Iterate the data provider's data and make a login attempt for each combination of user & password
+	- If the captcha appears (whether we managed to input the entire dataset or not) we will assert it's presence.
 ## 06/12/2024 23:33 PM
 * Fixed the searching-in-the-search-bar method "search" in class ourWikipediaHomePage and its related locators, it now properly searches and enters to the desired page.
 * Added another search method to exclusively search for the Sandbox page just to not modify Nico's search method *too* much.

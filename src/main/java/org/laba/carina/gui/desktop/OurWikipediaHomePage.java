@@ -1,14 +1,8 @@
-package org.laba.carina.desktop;
-
-import java.lang.invoke.MethodHandles;
-import java.util.List;
+package org.laba.carina.gui.desktop;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 
@@ -49,6 +43,9 @@ public class OurWikipediaHomePage extends AbstractPage {
 
     @FindBy(css = "button.cdx-button")
     private ExtendedWebElement searchButton;
+
+    @FindBy(id = "pt-login-2")
+    private ExtendedWebElement loginButton;
 
     public void selectInputDropdown() {
         toolbar.clickIfPresent();
@@ -93,6 +90,12 @@ public class OurWikipediaHomePage extends AbstractPage {
         return new WikipediaDiscussionPage(driver);
     }
 
+    public WikipediaLoginPage goToWikipediaLoginPage(){
+        openLoginPage();
+        return new WikipediaLoginPage(driver);
+    }
+
+
 
     public WikipediaPolicyPage goToWikipediaPolicyPage(){
         openPolicyPage();
@@ -119,6 +122,11 @@ public class OurWikipediaHomePage extends AbstractPage {
 
     public void openArgentinaPage(){
 
+    }
+
+    public WikipediaLoginPage openLoginPage(){
+        loginButton.clickIfPresent();
+        return new WikipediaLoginPage(driver);
     }
 
     public void openDiscussionPage(){

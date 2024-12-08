@@ -1,10 +1,9 @@
 package org.laba.WikipediaTests;
 
 import com.zebrunner.carina.core.IAbstractTest;
-import org.laba.carina.common.testDataProvider;
-import org.laba.carina.desktop.OurWikipediaHomePage;
-import org.laba.carina.desktop.WikipediaResultPage;
-import org.laba.carina.desktop.WikipediaSourceCodePage;
+import org.laba.carina.gui.common.testDataProvider;
+import org.laba.carina.gui.desktop.OurWikipediaHomePage;
+import org.laba.carina.gui.desktop.WikipediaResultPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

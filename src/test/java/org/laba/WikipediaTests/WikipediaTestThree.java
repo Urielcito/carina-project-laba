@@ -5,11 +5,8 @@ import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
-import com.zebrunner.carina.webdriver.gui.AbstractPage;
-import org.laba.carina.desktop.OurWikipediaHomePage;
-import org.laba.carina.desktop.WikipediaDiscussionPage;
-import org.laba.carina.desktop.WikipediaSourceCodePage;
-import org.laba.carina.desktop.WikipediaUploadPage;
+import org.laba.carina.gui.desktop.OurWikipediaHomePage;
+import org.laba.carina.gui.desktop.WikipediaUploadPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

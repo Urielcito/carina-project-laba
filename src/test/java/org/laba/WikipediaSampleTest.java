@@ -5,9 +5,9 @@ import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
-import org.laba.carina.desktop.OurWikipediaHomePage;
-import org.laba.carina.desktop.WikipediaSignUpPage;
-import org.laba.carina.desktop.WikipediaUsernamesPage;
+import org.laba.carina.gui.desktop.OurWikipediaHomePage;
+import org.laba.carina.gui.desktop.WikipediaSignUpPage;
+import org.laba.carina.gui.desktop.WikipediaUsernamesPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
