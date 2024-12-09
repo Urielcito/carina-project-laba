@@ -2,6 +2,11 @@
 - 10 Android Native tests.
 
 # Changelog
+## 09/12/2024 18:28 PM
+* Developed a default test that executes an apk and asserts that it's opened.
+* Note for @NicolasChas: In the test (AndroidDriverTest.java in package org.laba), the user should be provided by the _config.properties file under the Android section with the name 'PC-user'. From now on we are including this file in the .gitignore so that further development does not expose vulnerable information to the internet. To make this work you only have to make a new line and type 'PC-user={your_user}' somewhere in the _config.properties file.
+* Current problem: appium had a hard time gathering the automatically-downloaded apk from MY PC (temp files) just by passing the url for it (I don't know if this would be the case in your PC, if you wanna try, the url is as follows: https://dw.uptodown.net/dwn/TUJMBZW_Zv7ykK0CxXAOdeF4lDvZ6_7T356fCAznDSEaAEC923XpTaGb5qGE2C-HbfHBo_sPHfaJtjJDX3gpRJHHqg0ly3J3gMA1B0xKEZg3bbpldRw9MFVEHge-6Th1/7Pqy71g0I4GTkC7M7Q1bfYaeFdOL5rj3CdjKau1-roVOcwsKdfnZqJUPhPuhNIfbvMzT0sg9MiTcaxWyn_gxUdXMDq47oT-qpVkO8w6pA-ppOixVeLDhgzO99jiJ8kiL/_21_yyVvW9zrOtopmLh-T0NWK3bbvyHRpcnGlojHrbde5xRGx9RsmminNlxYsUEYrspl-tdMptr-PlQ-I_Pjzw==/mi-calculator-15-2-11.apk).
+
 ## 09/12/2024 17:36 PM
 * Succesfully connected the code with the android emulator.
 ## 08/12/2024 1:16 AM

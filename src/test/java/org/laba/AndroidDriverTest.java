@@ -18,6 +18,7 @@ package org.laba;
 
 
 
+import org.laba.carina.mobile.CalculatorAppMain;
 import org.testng.Assert;
 
 import com.zebrunner.carina.core.IAbstractTest;
@@ -32,9 +33,10 @@ public class AndroidDriverTest implements IAbstractTest {
     @MethodOwner(owner = "nicuri")
     @TestLabel(name = "feature", value = {"mobile", "acceptance"})
     public void driverTest() {
-        R.CONFIG.put("capabilities.app", "/Users/uribe/Desktop/app.apk",true);
-        //R.CONFIG.put("capabilities.appActivity", ".view.DragAndDropDemo", true);
+        String user = R.CONFIG.get("PC-user");
+        R.CONFIG.put("capabilities.app", "/Users/"+ user + "/Desktop/app.apk",true);
+        CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
+        Assert.assertTrue(appMain.isOpened());
 
-        //nose
     }
 }
