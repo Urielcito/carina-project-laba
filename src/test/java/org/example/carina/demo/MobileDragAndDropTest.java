@@ -16,7 +16,7 @@ public class MobileDragAndDropTest implements IAbstractTest {
     @TestLabel(name = "feature", value = {"mobile", "acceptance"})
     public void testDragAndDrop() {
         R.CONFIG.put("capabilities.app",
-                "https://github.com/appium/java-client/raw/master/src/test/resources/apps/ApiDemos-debug.apk",
+                "/Users/uribe/Desktop/app.apk",
                 true);
         R.CONFIG.put("capabilities.appActivity", ".view.DragAndDropDemo", true);
 

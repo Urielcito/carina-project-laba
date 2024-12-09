@@ -2,6 +2,8 @@
 - 10 Android Native tests.
 
 # Changelog
+## 09/12/2024 17:36 PM
+* Succesfully connected the code with the android emulator.
 ## 08/12/2024 1:16 AM
 * Added the needed dataprovider for my tenth test.
 * Added the eighth test:

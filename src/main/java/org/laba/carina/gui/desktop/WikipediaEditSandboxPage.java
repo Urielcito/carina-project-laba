@@ -41,7 +41,6 @@ public class WikipediaEditSandboxPage extends AbstractPage {
         for(ExtendedWebElement button : uiLabels) {
             LOGGER.info("Button's get Text: "+button.getText());
             if (button.getText().equals(text)) {
-
                 button.click();
                 break;
             }
