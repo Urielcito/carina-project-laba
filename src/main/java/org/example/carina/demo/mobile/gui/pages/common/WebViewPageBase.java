@@ -11,6 +11,12 @@ public abstract class WebViewPageBase extends AbstractPage implements IMobileUti
         super(driver);
     }
 
+    public abstract ChartsPageBase goToChartsPage();
+
+    public abstract MapsPageBase goToMapsPage();
+
+    public abstract UIElementsPageBase goToUiPage();
+
     public abstract ContactUsPageBase goToContactUsPage();
 
 }
