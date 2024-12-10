@@ -3,39 +3,46 @@ package org.laba.AndroidTests;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
+import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
+import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.example.carina.demo.mobile.gui.pages.android.ChartsPage;
 import org.example.carina.demo.mobile.gui.pages.android.WebViewPage;
 import org.example.carina.demo.mobile.gui.pages.common.*;
+import org.laba.carina.mobile.CalculatorAppMain;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class AndroidTestOne implements IAbstractTest, IMobileUtils {
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    @TestLabel(name = "feature", value = {"mobile", "regression"})
+    @TestLabel(name = "4 sums", value = {"mobile", "regression"})
     public void testOne(){
-        String username = "Test user";
-        String password = RandomStringUtils.randomAlphabetic(10);
-        WelcomePageBase welcomePage = initPage(getDriver(), WelcomePageBase.class);
-        Assert.assertTrue(welcomePage.isPageOpened(), "Welcome page isn't opened");
-        LoginPageBase loginPage = welcomePage.clickNextBtn();
-        Assert.assertFalse(loginPage.isLoginBtnActive(), "Login button is active when it should be disabled");
-        loginPage.typeName(username);
-        loginPage.typePassword(password);
-        loginPage.selectMaleSex();
-        loginPage.checkPrivacyPolicyCheckbox();
-        CarinaDescriptionPageBase carinaDescriptionPage = loginPage.clickLoginBtn();
-        Assert.assertTrue(carinaDescriptionPage.isPageOpened(), "Carina description page isn't opened");
+        R.CONFIG.put("capabilities.app", "D:\\Program Files (x86)\\Android\\app.apk", true);
+        CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
+        Assert.assertTrue(appMain.isOpened());
 
-        WebViewPageBase webViewPage= initPage(getDriver(), WebViewPageBase.class);
-        Assert.assertTrue(webViewPage.isPageOpened(), "Web view page isn't opened");
+        List<ExtendedWebElement> firstSet = appMain.getRandomNumbers(4);
+        List<ExtendedWebElement> secondSet = appMain.getRandomNumbers(4);
 
-        webViewPage.goToChartsPage();
-        ChartsPage chartsPage=initPage(getDriver(),ChartsPage.class);
-        Assert.assertTrue(chartsPage.isPageOpened(), "Charts page isn't opened");
-        chartsPage.cycleView();
+        int sum = 0;
+        for (int i = 0; i < 4; i++) {
+            int firstNum = Integer.parseInt(firstSet.get(i).getText());
+            int secondNum = Integer.parseInt(secondSet.get(i).getText());
+            sum += firstNum + secondNum;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            firstSet.get(i).click();
+            appMain.clickPlusButton();
+            secondSet.get(i).click();
+            appMain.clickEqualsButton();
+            Assert.assertTrue(appMain.getResult(),"Result not reached.");
+        }
+
     }
 }
