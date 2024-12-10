@@ -16,6 +16,12 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
     @FindBy(id = "com.miui.calculator:id/gradient_mask_view")
     private ExtendedWebElement maskView;
 
+    @FindBy(id = "com.miui.calculator:id/parentPanel")
+    private ExtendedWebElement locationPermissionPanel;
+
+    @FindBy(id = "android:id/button2")
+    private ExtendedWebElement dontAgreeButton;
+
     @FindBy(id = "com.miui.calculator:id/digit_0")
     private ExtendedWebElement digitZero;
 
@@ -107,6 +113,15 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
 
     public String getResultText(){
         return resultField.getText();
+    }
+
+    public boolean isLocationPanelPresent(){
+        return locationPermissionPanel.isPresent();
+    }
+
+    public void clickOnDontAgree(){
+        if (isLocationPanelPresent())
+            dontAgreeButton.clickIfPresent();
     }
 
     public boolean isOpened(long timeout) {
