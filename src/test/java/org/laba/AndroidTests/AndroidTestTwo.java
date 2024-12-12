@@ -15,11 +15,12 @@ import java.util.List;
 public class AndroidTestTwo implements IAbstractTest, IMobileUtils {
 
     @Test()
-    @MethodOwner(owner = "qpsdemo")
-    @TestLabel(name = "one 4 digit sum", value = {"mobile", "regression"})
+    @MethodOwner(owner = "nicuri")
+    @TestLabel(name = "Four one digit sum", value = {"mobile", "regression"})
     public void testTwo(){
         R.CONFIG.put("capabilities.app", "D:\\Program Files (x86)\\Android\\app.apk",true);
         CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
+        appMain.clickOnDontAgree();
         Assert.assertTrue(appMain.isOpened());
 
         List<ExtendedWebElement> randomDigits = appMain.getRandomNumbers(8);

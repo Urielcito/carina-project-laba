@@ -55,11 +55,33 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
     @FindBy(id = "com.miui.calculator:id/op_add")
     private ExtendedWebElement plusButton;
 
+    @FindBy(id = "com.miui.calculator:id/op_mul")
+    private ExtendedWebElement multiplyButton;
+
+    @FindBy(id = "com.miui.calculator:id/op_sub")
+    private ExtendedWebElement substractButton;
+
     @FindBy(id = "com.miui.calculator:id/btn_equal_s")
     private ExtendedWebElement equalsButton;
 
     @FindBy(id = "com.miui.calculator:id/result")
     private ExtendedWebElement resultField;
+
+    @FindBy(id = "com.miui.calculator:id/btn_switch")
+    private ExtendedWebElement showMore;
+
+    @FindBy(id = "com.miui.calculator:id/const_e")
+    private ExtendedWebElement buttonE;
+
+    @FindBy(id = "com.miui.calculator:id/lparen")
+    private ExtendedWebElement leftParen;
+
+    @FindBy(id = "com.miui.calculator:id/rparen")
+    private ExtendedWebElement rightParen;
+
+    @FindBy(id = "com.miui.calculator:id/op_pow")
+    private ExtendedWebElement buttonPower;
+
 
     public ExtendedWebElement getNumberElementByDigit(char digit) {
         switch (digit) {
@@ -99,13 +121,31 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
         return numbers.subList(0, count);
     }
 
-    public void clickOnNumberOne(){
-        digitOne.clickIfPresent();
+    public void clickShowMore(){
+        showMore.clickIfPresent();
     }
 
     public void clickPlusButton(){plusButton.clickIfPresent();}
 
     public void clickEqualsButton(){equalsButton.clickIfPresent();}
+
+    public void clickMultButton(){multiplyButton.clickIfPresent();}
+
+    public void clickDigitNine(){digitNine.clickIfPresent();}
+
+    public void clickDigitFour(){digitFour.clickIfPresent();}
+
+    public void clickDigitFive(){digitFive.clickIfPresent();}
+
+    public void clickDigitTwo(){digitTwo.clickIfPresent();}
+
+    public void clickLeftParen(){leftParen.clickIfPresent();}
+
+    public void clickPowerButton(){buttonPower.clickIfPresent();}
+
+    public void clickRightParen(){rightParen.clickIfPresent();}
+
+    public void clickSubButton(){substractButton.clickIfPresent();}
 
     public boolean getResult(){
         return resultField.isElementPresent();
@@ -117,6 +157,10 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
 
     public boolean isLocationPanelPresent(){
         return locationPermissionPanel.isPresent();
+    }
+
+    public void clickButtonE(){
+        buttonE.clickIfPresent();
     }
 
     public void clickOnDontAgree(){

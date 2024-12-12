@@ -34,7 +34,7 @@ public class AndroidDriverTest implements IAbstractTest {
     @TestLabel(name = "feature", value = {"mobile", "acceptance"})
     public void driverTest() {
         String user = R.CONFIG.get("PC-user");
-        R.CONFIG.put("capabilities.app", "C:\\Users\\uribe\\Desktop\\app.apk",true);
+        R.CONFIG.put("capabilities.app", "D:\\Program Files (x86)\\Android\\app.apk", true);
         CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
         appMain.clickOnDontAgree();
         Assert.assertTrue(appMain.isOpened());

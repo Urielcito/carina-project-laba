@@ -19,11 +19,12 @@ import java.util.List;
 public class AndroidTestOne implements IAbstractTest, IMobileUtils {
 
     @Test()
-    @MethodOwner(owner = "qpsdemo")
-    @TestLabel(name = "4 sums", value = {"mobile", "regression"})
+    @MethodOwner(owner = "nicuri")
+    @TestLabel(name = "Four one digit sums", value = {"mobile", "regression"})
     public void testOne(){
         R.CONFIG.put("capabilities.app", "D:\\Program Files (x86)\\Android\\app.apk", true);
         CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
+        appMain.clickOnDontAgree();
         Assert.assertTrue(appMain.isOpened());
 
         List<ExtendedWebElement> firstSet = appMain.getRandomNumbers(4);

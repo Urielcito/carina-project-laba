@@ -1,3 +1,13 @@
+
+# Changelog
+## 12/12/2024 15:15 PM
+* Finished First Five tests.
+* -First test does 4 random one digit sums.
+* -Second does one random 4 digit sum.
+* -Third Tests if the value of the irrational number e is correct in the app.
+* -Fourth tests if the app follows the rule of minus times minus = positive.
+* -Fifth tests if the app follows the rule of (a+b)2 = a2+2ab+b2.
+
 # TO-DO:
 - 10 Android Native tests.
 

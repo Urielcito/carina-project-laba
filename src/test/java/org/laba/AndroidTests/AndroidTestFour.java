@@ -1,0 +1,35 @@
+package org.laba.AndroidTests;
+
+import com.zebrunner.agent.core.annotation.TestLabel;
+import com.zebrunner.carina.core.IAbstractTest;
+import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
+import com.zebrunner.carina.utils.R;
+import com.zebrunner.carina.utils.mobile.IMobileUtils;
+import org.laba.carina.mobile.CalculatorAppMain;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class AndroidTestFour implements IAbstractTest, IMobileUtils {
+
+    @Test()
+    @MethodOwner(owner = "nicuri")
+    @TestLabel(name = "minus times minus", value = {"mobile", "regression"})
+    public void testFour() {
+        R.CONFIG.put("capabilities.app", "D:\\Program Files (x86)\\Android\\app.apk",true);
+        CalculatorAppMain appMain = new CalculatorAppMain(getDriver());
+        appMain.clickOnDontAgree();
+        Assert.assertTrue(appMain.isOpened());
+
+        appMain.clickSubButton();
+        appMain.clickDigitNine();
+        appMain.clickMultButton();
+        appMain.clickSubButton();
+        appMain.clickDigitNine();
+        appMain.clickEqualsButton();
+        String rawResult = appMain.getResultText();
+        String actualResult = rawResult.replace("=", "").trim();
+        Assert.assertFalse(actualResult.contains("-"), "Result of operation should be positive.");
+    }
+}
+
+
