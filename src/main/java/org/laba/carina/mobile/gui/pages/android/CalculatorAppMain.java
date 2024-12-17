@@ -1,10 +1,10 @@
-package org.laba.carina.mobile;
+package org.laba.carina.mobile.gui.pages.android;
 
 import com.zebrunner.carina.utils.android.IAndroidUtils;
-import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.DriverHelper;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.mobile.devices.MobileAbstractPage;
+import org.laba.carina.mobile.gui.components.numpad.CalculatorNumpadBasic;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,6 +15,9 @@ import java.util.List;
 public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUtils {
     @FindBy(id = "com.miui.calculator:id/gradient_mask_view")
     private ExtendedWebElement maskView;
+
+    @FindBy(id = "com.miui.calculator:id/nbp_pad")
+    private CalculatorNumpadBasic numPad;
 
     @FindBy(id = "com.miui.calculator:id/parentPanel")
     private ExtendedWebElement locationPermissionPanel;
@@ -82,6 +85,24 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
     @FindBy(id = "com.miui.calculator:id/op_pow")
     private ExtendedWebElement buttonPower;
 
+    @FindBy(xpath = "//android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]")
+    private ExtendedWebElement converterButton;
+
+    @FindBy(id = "com.miui.calculator:id/action_menu_item_child_icon")
+    private ExtendedWebElement threeDotsButton;
+
+    @FindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.TextView")
+    private ExtendedWebElement historyButton;
+
+    public CalculatorAppMain(WebDriver driver){super(driver);}
+
+    public void clickOnConverterButton(){
+        converterButton.clickIfPresent();
+    }
+    public CalculatorAppConverter goToConverterScreen(){
+        clickOnConverterButton();
+        return new CalculatorAppConverter(driver);
+    }
 
     public ExtendedWebElement getNumberElementByDigit(char digit) {
         switch (digit) {
@@ -109,7 +130,6 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
                 throw new IllegalArgumentException("Invalid digit: " + digit);
         }
     }
-    public CalculatorAppMain(WebDriver driver){super(driver);}
 
     public List<ExtendedWebElement> getNumberElements() {
         return Arrays.asList(digitOne, digitTwo, digitThree, digitFour, digitFive, digitSix, digitSeven, digitEight, digitNine, digitZero);
@@ -166,6 +186,25 @@ public class CalculatorAppMain extends MobileAbstractPage implements IAndroidUti
     public void clickOnDontAgree(){
         if (isLocationPanelPresent())
             dontAgreeButton.clickIfPresent();
+    }
+
+    public void clickOnThreeDots(){
+        threeDotsButton.clickIfPresent();
+    }
+
+    public void clickOnHistoryButton(){
+        historyButton.clickIfPresent();
+    }
+
+    public CalculatorAppHistory goToHistory(){
+        clickOnThreeDots();
+        clickOnHistoryButton();
+
+        return new CalculatorAppHistory(driver);
+    }
+
+    public CalculatorNumpadBasic getNumpad(){
+        return numPad;
     }
 
     public boolean isOpened(long timeout) {

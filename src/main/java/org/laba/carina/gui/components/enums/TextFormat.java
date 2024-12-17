@@ -1,4 +1,4 @@
-package org.laba.carina.gui.components.compare;
+package org.laba.carina.gui.components.enums;
 
 public class TextFormat {
     public enum Type {

@@ -18,7 +18,7 @@ package org.laba;
 
 
 
-import org.laba.carina.mobile.CalculatorAppMain;
+import org.laba.carina.mobile.gui.pages.android.CalculatorAppMain;
 import org.testng.Assert;
 
 import com.zebrunner.carina.core.IAbstractTest;

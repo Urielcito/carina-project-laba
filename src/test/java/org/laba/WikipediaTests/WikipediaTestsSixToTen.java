@@ -7,7 +7,7 @@ import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.laba.carina.gui.common.testDataProvider;
-import org.laba.carina.gui.components.compare.TextFormat;
+import org.laba.carina.gui.components.enums.TextFormat;
 import org.laba.carina.gui.desktop.OurWikipediaHomePage;
 import org.laba.carina.gui.desktop.WikipediaActiveSandboxPage;
 import org.laba.carina.gui.desktop.WikipediaEditSandboxPage;
@@ -15,7 +15,6 @@ import org.laba.carina.gui.desktop.WikipediaSandboxPage;
 import org.laba.carina.gui.desktop.WikipediaLoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import org.testng.log4testng.Logger;
 
 public class WikipediaTestsSixToTen implements IAbstractTest {

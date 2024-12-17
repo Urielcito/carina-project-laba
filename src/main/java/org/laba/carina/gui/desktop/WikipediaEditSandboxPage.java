@@ -2,7 +2,7 @@ package org.laba.carina.gui.desktop;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
-import org.laba.carina.gui.components.compare.TextFormat;
+import org.laba.carina.gui.components.enums.TextFormat;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

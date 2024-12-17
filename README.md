@@ -1,5 +1,21 @@
-
 # Changelog
+
+## 17/12/2024 4:18 AM
+* Added some Abstract UI Objects to facilitate test development (Numpad, unit container) 
+	- Note for @NicolasChas: Check it out, you should be able to just delete the methods you made in appMain and use the numPad's methods for handling inputs (I didn't account for the 'advanced' section of the calculator still, as it's just adding the locators for it anyways.) Also I check out my approach for entering numbers and retrieving them from a result field =D.
+* Finished Android Native Tests
+* Added the sixth test:
+	- Purpose: The math for converting lengths is correct
+* Added the seventh test:
+	- Purpose: The math for converting masses is correct
+* Added the eigth test:
+	- Purpose: The math for convertir areas is correct
+* Added the nineth test:
+	- Purpose: An operation is reflected in the history of the app
+* Added the tenth test:
+	- Purpose: An operation is no longer reflected in the history after deleting the entire history of the app.
+
+
 ## 12/12/2024 15:15 PM
 * Finished First Five tests.
 * -First test does 4 random one digit sums.
@@ -8,10 +24,6 @@
 * -Fourth tests if the app follows the rule of minus times minus = positive.
 * -Fifth tests if the app follows the rule of (a+b)2 = a2+2ab+b2.
 
-# TO-DO:
-- 10 Android Native tests.
-
-# Changelog
 ## 09/12/2024 18:28 PM
 * Developed a default test that executes an apk and asserts that it's opened.
 * Note for @NicolasChas: In the test (AndroidDriverTest.java in package org.laba), the user should be provided by the _config.properties file under the Android section with the name 'PC-user'. From now on we are including this file in the .gitignore so that further development does not expose vulnerable information to the internet. To make this work you only have to make a new line and type 'PC-user={your_user}' somewhere in the _config.properties file.

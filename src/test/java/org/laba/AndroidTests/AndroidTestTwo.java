@@ -6,7 +6,7 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.mobile.IMobileUtils;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import org.laba.carina.mobile.CalculatorAppMain;
+import org.laba.carina.mobile.gui.pages.android.CalculatorAppMain;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
